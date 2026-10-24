@@ -8,7 +8,7 @@ The hosted stylesheet for EverQuote's Internal Tools Design System.
 ```
 
 - `/v1/` always serves the latest 1.x release. Fixes and new classes arrive on reload.
-- `/1.1.0/` is fixed to one release, for tools that need to stay put.
+- `/1.0.0/` is fixed to one release, for tools that need to stay put.
 - `eq-ds-chart.js` (same folders) themes Chart.js 4 with the system's tokens.
 
 Built from the design system's token source; don't edit these files by hand. Releases follow semantic versioning: patch for fixes, minor for new classes, major for renames or removals. See CHANGELOG.md.
