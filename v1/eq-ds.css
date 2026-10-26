@@ -5,7 +5,7 @@
 
 :root {
   --eq-ds-version: "1.0.0";
-  --eq-ds-build: "2026-10-24T19:01Z";
+  --eq-ds-build: "2026-10-26T12:03Z";
   color-scheme: light dark;
 
   /* Base colours (Tailwind v4 + EverQuote brand ramp) */
@@ -629,6 +629,16 @@
 .eq-button-lg { min-height: 44px; padding: var(--space-control-y-lg) var(--space-control-x-lg); font: 600 16px/24px var(--font-sans); }
 .eq-button-icon { width: 36px; padding: 0; }
 .eq-button-icon.eq-button-sm { width: 28px; }
+.eq-button-icon.eq-button-lg { width: 44px; padding: 0; }
+/* Pressed (Figma State=Pressed): the hover colour without the shadow */
+.eq-button:active:not(:disabled) { background: var(--color-brand-primary-hover); box-shadow: none; }
+.eq-button-secondary:active:not(:disabled) { background: var(--color-theme-button-secondary-bg); box-shadow: inset 0 0 0 var(--border-width-default) var(--color-theme-button-secondary-ring); }
+.eq-button-tertiary:active:not(:disabled) { background: var(--color-theme-button-secondary-hover); box-shadow: inset 0 0 0 var(--border-width-default) var(--color-borders-input-hover); }
+.eq-button-danger:active:not(:disabled) { background: var(--color-status-danger-hover); box-shadow: none; }
+.eq-button-secondary-danger:active:not(:disabled) { background: transparent; color: var(--color-status-danger-hover); box-shadow: inset 0 0 0 var(--border-width-default) var(--color-status-danger-hover); }
+.eq-button-warning:active:not(:disabled) { background: var(--color-status-warning-hover); }
+.eq-button-link:active:not(:disabled) { background: transparent; color: var(--color-brand-link-hover); }
+.eq-button-plain:active:not(:disabled) { background: var(--color-surfaces-accent); color: var(--color-surfaces-foreground); }
 .eq-button:disabled, .eq-button[aria-disabled="true"] { background: var(--color-disabled-disabled); color: var(--color-disabled-disabled-foreground); box-shadow: none; cursor: not-allowed; }
 .eq-button-link:disabled, .eq-button-plain:disabled { background: transparent; color: var(--color-disabled-disabled-text); }
 .eq-button[aria-busy="true"] { cursor: progress; }
@@ -698,6 +708,7 @@
 /* ---------- Field ---------- */
 .eq-field { display: flex; flex-direction: column; gap: var(--space-gap-sm); max-width: 480px; }
 .eq-field-label { font: 600 14px/20px var(--font-sans); color: var(--color-surfaces-foreground); }
+.eq-field-auto { margin-left: var(--space-gap-2xs); font: 400 12px/18px var(--font-sans); color: var(--color-surfaces-muted-foreground); }
 .eq-field-required { color: var(--color-status-danger-text); font-weight: 400; margin-left: var(--space-gap-3xs); }
 .eq-field-help { font: 400 12px/18px var(--font-sans); color: var(--color-surfaces-muted-foreground); margin: 0; }
 .eq-field-error { display: flex; align-items: flex-start; gap: var(--space-gap-xs); font: 400 12px/18px var(--font-sans); color: var(--color-status-danger-text); margin: 0; }
