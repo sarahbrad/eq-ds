@@ -9,4 +9,5 @@ First published release: tokens, text styles, every component in the Figma libra
 - Page templates: dashboard, lookup, calculator, generator, report, detail, top bar.
 - Tokens: `--color-chart-chart-1-foreground` to `-8-foreground` for text on chart colours.
 - `eq-ds-chart.js`: `target: true` series and the `eqChart()` helper.
-- New helpers: `eq-drawer-lg`, `eq-field-wide`.
+- New helpers: `eq-drawer-lg`, `eq-field-wide`, `eq-field-auto` (computed fields).
+- Buttons: pressed (`:active`) states for every variant; the large icon button is square at 44px.
