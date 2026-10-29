@@ -5,7 +5,7 @@
 
 :root {
   --eq-ds-version: "1.0.0";
-  --eq-ds-build: "2026-10-26T12:03Z";
+  --eq-ds-build: "2026-10-29T12:11Z";
   color-scheme: light dark;
 
   /* Base colours (Tailwind v4 + EverQuote brand ramp) */
@@ -140,7 +140,6 @@
   --color-brand-link-visited: var(--color-violet-700);
   --color-brand-logo-primary: var(--color-brand-950);
   --color-brand-logo-accent: var(--color-brand-700);
-  --color-brand-mark-sky: var(--color-brand-400);
   --color-brand-mark-cobalt: var(--color-brand-700);
   --color-brand-mark-orange: var(--color-orange-500);
   --color-status-danger: var(--color-red-600);
@@ -338,6 +337,7 @@
     --color-brand-link-visited: var(--color-violet-400);
     --color-brand-logo-primary: var(--color-white);
     --color-brand-logo-accent: var(--color-white);
+    --color-brand-mark-cobalt: var(--color-brand-500);
     --color-status-danger: var(--color-red-500);
     --color-status-danger-hover: var(--color-red-400);
     --color-status-danger-text: var(--color-red-400);
@@ -457,6 +457,7 @@
   --color-brand-link-visited: var(--color-violet-400);
   --color-brand-logo-primary: var(--color-white);
   --color-brand-logo-accent: var(--color-white);
+  --color-brand-mark-cobalt: var(--color-brand-500);
   --color-status-danger: var(--color-red-500);
   --color-status-danger-hover: var(--color-red-400);
   --color-status-danger-text: var(--color-red-400);
@@ -2748,7 +2749,7 @@ a.eq-annotation-marker:hover { background: var(--color-brand-primary-hover); }
   .eq-masthead-nav { order: 3; width: 100%; overflow-x: auto; }
 }
 
-/* ---------- Internal tool mark (two circles and their overlap; also the favicon) ---------- */
+/* ---------- Internal tool mark (three tiles and a circle; also the favicon) ---------- */
 .eq-tool-mark { width: 32px; height: 32px; flex: none; }
 .eq-tool-mark-sm { width: 20px; height: 20px; }
 
