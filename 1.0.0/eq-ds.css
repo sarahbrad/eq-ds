@@ -5,7 +5,7 @@
 
 :root {
   --eq-ds-version: "1.0.0";
-  --eq-ds-build: "2026-10-29T12:11Z";
+  --eq-ds-build: "2026-10-29T13:22Z";
   color-scheme: light dark;
 
   /* Base colours (Tailwind v4 + EverQuote brand ramp) */
@@ -850,8 +850,9 @@ th[aria-sort="descending"] .eq-sort::after { opacity: 1; margin-top: -4px; }
   padding: var(--space-inset-xl) var(--space-control-x) var(--space-inset-md);
   background: var(--color-theme-sidebar); border-right: var(--border-width-default) solid var(--color-theme-sidebar-border);
 }
-.eq-sidebar-brand { display: flex; flex-direction: column; gap: var(--space-gap-xs); padding: 0 var(--space-inset-2xs) var(--space-inset-lg) var(--space-inset-sm); }
-.eq-sidebar-app { font: 600 14px/20px var(--font-sans); color: var(--color-surfaces-muted-foreground); }
+/* Brand row: the Internal tool mark and the tool's name (no EverQuote wordmark) */
+.eq-sidebar-brand { display: flex; align-items: center; gap: var(--space-gap-sm); padding: 0 var(--space-inset-2xs) var(--space-inset-lg) var(--space-inset-sm); }
+.eq-sidebar-app { font: 700 15px/20px var(--font-sans); color: var(--color-surfaces-foreground); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .eq-sidebar-group { padding: var(--space-inset-md) var(--space-inset-snug) var(--space-inset-2xs); font: 500 12px/18px var(--font-sans); color: var(--color-surfaces-muted-foreground); }
 .eq-nav-item {
   display: flex; align-items: center; gap: var(--space-gap-snug); min-height: 36px; padding: var(--space-inset-2xs) var(--space-inset-snug);
@@ -877,9 +878,7 @@ th[aria-sort="descending"] .eq-sort::after { opacity: 1; margin-top: -4px; }
 .eq-sidebar[data-collapsed] .eq-sidebar-handle::before { margin-left: -3px; transform: rotate(-135deg); }
 .eq-sidebar[data-collapsed] .eq-sidebar-app, .eq-sidebar[data-collapsed] .eq-nav-label, .eq-sidebar[data-collapsed] .eq-nav-item .eq-badge { display: none; }
 .eq-sidebar[data-collapsed] .eq-sidebar-brand { padding: 0 0 var(--space-inset-md); }
-.eq-sidebar-brand > .eq-tool-mark { display: none; }
-.eq-sidebar[data-collapsed] .eq-sidebar-brand > .eq-tool-mark { display: block; width: 40px; height: 40px; }
-.eq-sidebar[data-collapsed] .eq-sidebar-brand > svg:not(.eq-tool-mark) { display: none; }
+.eq-sidebar[data-collapsed] .eq-sidebar-brand > .eq-tool-mark { width: 40px; height: 40px; }
 .eq-sidebar[data-collapsed] .eq-sidebar-group { width: 32px; height: 1px; padding: 0; margin: var(--space-inset-sm) 0; overflow: hidden; color: transparent; background: var(--color-theme-sidebar-border); }
 .eq-sidebar[data-collapsed] .eq-nav-item { width: 40px; height: 40px; padding: var(--space-inset-md); justify-content: center; }
 .eq-sidebar[data-collapsed] .eq-nav-item-sub { display: none; }
