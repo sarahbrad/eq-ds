@@ -13,3 +13,4 @@ First published release: tokens, text styles, every component in the Figma libra
 - Buttons: pressed (`:active`) states for every variant; the large icon button is square at 44px.
 - Internal tool mark is now Parts: three Cobalt tiles and a Flame circle. `--color-brand-mark-sky` is gone; `--color-brand-mark-cobalt` is brand-500 in Dark.
 - `favicon.svg` (the tool mark; follows Light/Dark) next to the stylesheet: `<link rel="icon" href="…/v1/favicon.svg" type="image/svg+xml">`. The starter page links it.
+- Sidebar brand row: the Internal tool mark and the tool's name, side by side (name 15px bold); no EverQuote wordmark. Collapsed, the mark shows alone at 40px.
