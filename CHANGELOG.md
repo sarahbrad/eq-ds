@@ -15,3 +15,4 @@ First published release: tokens, text styles, every component in the Figma libra
 - `favicon.svg` (the tool mark; follows Light/Dark) next to the stylesheet: `<link rel="icon" href="…/v1/favicon.svg" type="image/svg+xml">`. The starter page links it.
 - Sidebar brand row: the Internal tool mark and the tool's name, side by side (name 15px bold); no EverQuote wordmark. Collapsed, the mark shows alone at 40px.
 - Workspace switcher and sidebar footer chevrons use `--color-surfaces-subtle`, like other secondary icons.
+- Works beside an app's own CSS: `.eq-table` cells reset all borders (an app's `td, th { border }` no longer shows through), and classless cells ignore an app's global `box-sizing`. `eq-app` uses a unitless line height (still 20px at 14px), so an app's own larger headings don't overlap.
