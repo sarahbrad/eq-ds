@@ -5,7 +5,7 @@
 
 :root {
   --eq-ds-version: "1.0.0";
-  --eq-ds-build: "2026-10-30T12:15Z";
+  --eq-ds-build: "2026-10-30T12:46Z";
   color-scheme: light dark;
 
   /* Base colours (Tailwind v4 + EverQuote brand ramp) */
@@ -588,7 +588,7 @@
 :where([class^="eq-"], [class*=" eq-"])[hidden] { display: none !important; }
 .eq-app {
   margin: 0; min-height: 100vh;
-  font: 400 14px/20px var(--font-sans);
+  font: 400 14px/1.4286 var(--font-sans); /* unitless, so an app's own larger text keeps a sensible line height */
   color: var(--color-surfaces-foreground);
   background: var(--color-surfaces-card);
   -webkit-font-smoothing: antialiased;
@@ -821,13 +821,14 @@ dialog.eq-modal::backdrop { background: var(--color-surfaces-backdrop); }
 
 /* ---------- Data table (always inside a card) ---------- */
 .eq-table-card { border: var(--border-width-default) solid var(--color-borders-border-subtle); border-radius: var(--radius-card); box-shadow: var(--shadow-card); background: var(--color-surfaces-card); overflow-x: auto; }
+.eq-table th:not([class*="eq-"]), .eq-table td:not([class*="eq-"]) { box-sizing: content-box; } /* classless cells ignore an app's global box-sizing */
 .eq-table { width: 100%; border-collapse: collapse; font: 400 14px/20px var(--font-sans); color: var(--color-surfaces-foreground); }
 .eq-table th {
   text-align: left; white-space: nowrap; font: 600 12px/18px var(--font-sans); color: var(--color-theme-table-head);
   background: var(--color-surfaces-muted); padding: var(--space-inset-snug) var(--space-inset-lg);
-  border-bottom: var(--border-width-default) solid var(--color-borders-border);
+  border: 0; border-bottom: var(--border-width-default) solid var(--color-borders-border);
 }
-.eq-table td { padding: var(--space-inset-lg); border-bottom: var(--border-width-default) solid var(--color-borders-border); vertical-align: middle; }
+.eq-table td { padding: var(--space-inset-lg); border: 0; border-bottom: var(--border-width-default) solid var(--color-borders-border); vertical-align: middle; }
 .eq-table tbody tr:last-child td { border-bottom: 0; }
 .eq-table tbody tr:hover td { background: var(--color-surfaces-accent); }
 .eq-table tbody tr[aria-selected="true"] td { background: var(--color-brand-primary-subtle); }
