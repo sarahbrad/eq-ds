@@ -5,7 +5,7 @@
 
 :root {
   --eq-ds-version: "1.0.0";
-  --eq-ds-build: "2026-10-29T13:22Z";
+  --eq-ds-build: "2026-10-30T12:15Z";
   color-scheme: light dark;
 
   /* Base colours (Tailwind v4 + EverQuote brand ramp) */
@@ -2777,7 +2777,7 @@ a.eq-annotation-marker:hover { background: var(--color-brand-primary-hover); }
   background: var(--color-surfaces-card); border: var(--border-width-default) solid var(--color-borders-border); border-radius: var(--radius-control);
 }
 .eq-sidebar-workspace > summary { gap: var(--space-gap-sm); min-height: 36px; padding: var(--space-inset-sm) var(--space-inset-sm) var(--space-inset-sm) var(--space-control-x-sm); font: 500 12px/18px var(--font-sans); color: var(--color-surfaces-foreground); }
-.eq-sidebar-workspace > summary > svg, .eq-sidebar-footer > summary > svg { width: 16px; height: 16px; flex: none; color: var(--color-surfaces-muted-foreground); }
+.eq-sidebar-workspace > summary > svg, .eq-sidebar-footer > summary > svg { width: 16px; height: 16px; flex: none; color: var(--color-surfaces-subtle); }
 .eq-sidebar-workspace-icon { display: none; }
 .eq-sidebar-workspace-name, .eq-sidebar-footer-text { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .eq-sidebar-workspace > summary:hover, .eq-sidebar-footer > summary:hover { background: linear-gradient(var(--color-surfaces-accent), var(--color-surfaces-accent)), var(--color-surfaces-card); }
