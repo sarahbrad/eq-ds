@@ -16,3 +16,5 @@ First published release: tokens, text styles, every component in the Figma libra
 - Sidebar brand row: the Internal tool mark and the tool's name, side by side (name 15px bold); no EverQuote wordmark. Collapsed, the mark shows alone at 40px.
 - Workspace switcher and sidebar footer chevrons use `--color-surfaces-subtle`, like other secondary icons.
 - Works beside an app's own CSS: `.eq-table` cells reset all borders (an app's `td, th { border }` no longer shows through), and classless cells ignore an app's global `box-sizing`. `eq-app` uses a unitless line height (still 20px at 14px), so an app's own larger headings don't overlap.
+- The sidebar and the masthead stay in view while the page scrolls (1024px and wider). New `eq-sidebar-nav` wraps the sidebar's groups and items and scrolls when the nav is long, so Settings and the user stay at the bottom (`eq-sidebar-spacer` still works for older markup).
+- New Single page template (`SinglePagePattern`) for tools with one view: the masthead with the Internal tool mark and the tool's name, no nav. `eq-masthead-app-lg` sets the name at 15/20 bold.
