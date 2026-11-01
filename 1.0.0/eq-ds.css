@@ -5,7 +5,7 @@
 
 :root {
   --eq-ds-version: "1.0.0";
-  --eq-ds-build: "2026-11-01T12:10Z";
+  --eq-ds-build: "2026-11-01T12:15Z";
   color-scheme: light dark;
 
   /* Base colours (Tailwind v4 + EverQuote brand ramp) */
@@ -2739,7 +2739,7 @@ a.eq-annotation-marker:hover { background: var(--color-brand-primary-hover); }
 .eq-masthead-brand > svg { flex: none; }
 .eq-masthead-divider { width: var(--border-width-default); height: 20px; background: var(--color-borders-border); }
 .eq-masthead-app { font: 600 14px/20px var(--font-sans); color: var(--color-surfaces-foreground); white-space: nowrap; }
-.eq-masthead-app-lg { font: 700 15px/20px var(--font-sans); } /* single page: the tool's name next to the mark, as in the sidebar */
+.eq-masthead-app-lg { font: 700 15px/20px var(--font-sans); } /* the tool's name next to the Internal tool mark, as in the sidebar */
 .eq-masthead-nav { display: flex; align-items: center; gap: var(--space-gap-2xs); }
 .eq-masthead-actions { display: flex; align-items: center; gap: var(--space-gap-sm); margin-left: auto; }
 .eq-top-nav-item {
