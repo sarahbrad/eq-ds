@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.0 (9 Nov 2026)
+
+Luva mode, for internal tools that only Luva teams use.
+
+- `data-brand="luva"` on `<html>` switches the brand colours, the tool-mark colours and the font to Luva's. Everything else (surfaces, borders, status, spacing, radius, type sizes, components) is unchanged. Light and Dark both work, through the same `prefers-color-scheme` and `data-theme` rules.
+- The values come from the Figma library's new Brand collection (modes EverQuote and Luva). The Luva mode aliases Stitch / Glovebox: midnight-purple and lavender, with lime-100 for the tool-mark circle in Dark. 21 colour tokens change: `brand-primary`, `-hover`, `-subtle`, `brand-link`, `-hover`, `borders-ring`, `brand-mark-cobalt`, `-orange`, `chart-1`, `label-blue`, `-foreground`, `data-scales-seq-1…7` and `-div-pos-1…3`, plus `shadow-focus-ring`.
+- Font: `--font-sans` becomes Haffer XH (then Haffer), then Plus Jakarta Sans. Haffer XH comes first because it installs with every weight, while a `Haffer` family can be Light only. Haffer isn't on Google Fonts and is licensed, so it's used only where it's installed. Plus Jakarta Sans is the stand-in Luva already uses where Haffer isn't available (the Luva Google Slides master). eq-ds.css now also imports Plus Jakarta Sans from Google Fonts; browsers only download it on Luva pages.
+- `favicon-luva.svg` sits next to `favicon.svg`.
+- `eq-ds-chart.js` and the Chart snippets: the chart font now follows `--font-sans` (it was fixed to Mulish), and charts redraw when `data-brand` changes as well as `data-theme`.
+- The Claude DS artifact has `brands/luva.css` (the Luva blocks on their own) to inline after the tokens in artifacts.
+- EverQuote pages render exactly as in 1.0.0.
+
 ## 1.0.0 (24 Oct 2026)
 
 First published release: tokens, text styles, every component in the Figma library, trust patterns, page templates and the Chart.js theme.
