@@ -5,7 +5,7 @@
 
 :root {
   --eq-ds-version: "1.0.0";
-  --eq-ds-build: "2026-11-01T12:15Z";
+  --eq-ds-build: "2026-11-01T13:39Z";
   color-scheme: light dark;
 
   /* Base colours (Tailwind v4 + EverQuote brand ramp) */
@@ -138,8 +138,6 @@
   --color-brand-link: var(--color-brand-700);
   --color-brand-link-hover: var(--color-brand-950);
   --color-brand-link-visited: var(--color-violet-700);
-  --color-brand-logo-primary: var(--color-brand-950);
-  --color-brand-logo-accent: var(--color-brand-700);
   --color-brand-mark-cobalt: var(--color-brand-700);
   --color-brand-mark-orange: var(--color-orange-500);
   --color-status-danger: var(--color-red-600);
@@ -335,8 +333,6 @@
     --color-brand-link: var(--color-brand-400);
     --color-brand-link-hover: var(--color-brand-300);
     --color-brand-link-visited: var(--color-violet-400);
-    --color-brand-logo-primary: var(--color-white);
-    --color-brand-logo-accent: var(--color-white);
     --color-brand-mark-cobalt: var(--color-brand-500);
     --color-status-danger: var(--color-red-500);
     --color-status-danger-hover: var(--color-red-400);
@@ -455,8 +451,6 @@
   --color-brand-link: var(--color-brand-400);
   --color-brand-link-hover: var(--color-brand-300);
   --color-brand-link-visited: var(--color-violet-400);
-  --color-brand-logo-primary: var(--color-white);
-  --color-brand-logo-accent: var(--color-white);
   --color-brand-mark-cobalt: var(--color-brand-500);
   --color-status-danger: var(--color-red-500);
   --color-status-danger-hover: var(--color-red-400);
