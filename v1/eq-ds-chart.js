@@ -5,8 +5,8 @@
      eqChartTheme(Chart);                         // once, before creating charts
      new Chart(el, { type: 'line', data: { datasets: eqSeries([{ label: 'Quotes', data }]) } });
 
-   Every value is read from the eq-ds.css tokens at call time, so Light and Dark
-   follow the page. Call eqChartTheme(Chart) again and chart.update() after a theme switch. */
+   Every value is read from the eq-ds.css tokens at call time, so Light, Dark and the Luva brand
+   (data-brand="luva") follow the page. Call eqChartTheme(Chart) again and chart.update() after a theme switch. */
 (function () {
   function tok(name) { return getComputedStyle(document.documentElement).getPropertyValue('--' + name).trim(); }
   function alpha(color, a) {
@@ -19,7 +19,7 @@
 
   window.eqChartTheme = function (Chart) {
     var d = Chart.defaults;
-    d.font = { family: 'Mulish, ui-sans-serif, system-ui, sans-serif', size: 12, lineHeight: 1.5 };
+    d.font = { family: tok('font-sans') || 'Mulish, ui-sans-serif, system-ui, sans-serif', size: 12, lineHeight: 1.5 };
     d.color = tok('color-surfaces-muted-foreground');
     d.borderColor = tok('color-borders-border');
     d.scale.grid.color = tok('color-borders-border');
@@ -70,7 +70,7 @@ window.eqChart || (function () {
   function alpha(c, a) { var x = document.createElement("canvas").getContext("2d"); x.fillStyle = c; var h = x.fillStyle; if (h[0] !== "#") return c; var n = parseInt(h.slice(1, 7), 16); return "rgba(" + (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255) + "," + a + ")"; }
   window.eqChartTheme = window.eqChartTheme || function (Chart) {
     var d = Chart.defaults;
-    d.font = { family: "Mulish, ui-sans-serif, system-ui, sans-serif", size: 12, lineHeight: 1.5 };
+    d.font = { family: tok("font-sans") || "Mulish, ui-sans-serif, system-ui, sans-serif", size: 12, lineHeight: 1.5 };
     d.color = tok("color-surfaces-muted-foreground"); d.borderColor = tok("color-borders-border");
     d.scale.grid.color = tok("color-borders-border"); d.scale.border.color = tok("color-borders-border"); d.scale.ticks.color = tok("color-surfaces-muted-foreground");
     d.plugins.legend.labels.color = tok("color-surfaces-secondary-foreground"); d.plugins.legend.labels.boxWidth = 8; d.plugins.legend.labels.boxHeight = 8;
@@ -140,7 +140,7 @@ window.eqChart || (function () {
     if (!card.eqWired) {
       card.eqWired = true;
       card.addEventListener("change", function (e) { if (e.target.closest(".eq-segmented")) card.dataset.view = e.target.value; });
-      new MutationObserver(function () { eqChart(card); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+      new MutationObserver(function () { eqChart(card); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "data-brand"] });
       matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { eqChart(card); });
     }
     return card.eqChart;
