@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.1 (11 Nov 2026)
+
+Luva's full base palette.
+
+- The Luva block now defines every Stitch colour as a base token (`--color-stitch-<ramp>-<step>`), not only the 21 steps Luva mode points at: midnight-purple 50–950, lavender 50–950, mauve, off-white, lime, teal, red, white and the Stitch alpha colours (41 in all). Nothing else changes; no semantic value moves.
+- In the Claude DS artifact the Stitch colours sit straight after the EverQuote base ramps, and every base colour says it's the same in every view: Luva mode swaps the semantic tokens (such as `color-brand-primary`), not the ramps.
+
 ## 1.1.0 (9 Nov 2026)
 
 Luva mode, for internal tools that only Luva teams use.
@@ -9,7 +16,7 @@ Luva mode, for internal tools that only Luva teams use.
 - Font: `--font-sans` becomes Haffer XH (then Haffer), then Plus Jakarta Sans. Haffer XH comes first because it installs with every weight, while a `Haffer` family can be Light only. Haffer isn't on Google Fonts and is licensed, so it's used only where it's installed. Plus Jakarta Sans is the stand-in Luva already uses where Haffer isn't available (the Luva Google Slides master). eq-ds.css now also imports Plus Jakarta Sans from Google Fonts; browsers only download it on Luva pages.
 - `favicon-luva.svg` sits next to `favicon.svg`.
 - `eq-ds-chart.js` and the Chart snippets: the chart font now follows `--font-sans` (it was fixed to Mulish), and charts redraw when `data-brand` changes as well as `data-theme`.
-- The Claude DS artifact has `brands/luva.css` (the Luva blocks on their own) to inline after the tokens in artifacts.
+- In the Claude DS artifact, Luva mode is part of `components/bundle.css` (no separate file), and its font import includes Plus Jakarta Sans.
 - EverQuote pages render exactly as in 1.0.0.
 
 ## 1.0.0 (24 Oct 2026)
