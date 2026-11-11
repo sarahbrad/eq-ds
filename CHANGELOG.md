@@ -1,5 +1,47 @@
 # Changelog
 
+## 1.3.0 (11 Nov 2026)
+
+Components and fixes found by rebuilding four real tools (EQD-4788, EQD-4789, EQD-4791).
+
+**Fixed**
+- A closed Modal (`<dialog class="eq-modal">`) no longer shows on the page or takes focus on load.
+- The range Date picker (Calendar) stays open until the end date is picked; the month arrows no longer close it.
+- `eq-form-row-3` works on its own; `eq-form-row eq-form-row-3` still works.
+
+**Tables**
+- Grouped table: collapsible groups up to two levels, totals on each group row, Expand all / Collapse all, keyboard and screen-reader support (`data-level`, `eqGroupedTable`).
+- Table column bands: tinted header bands over sets of columns, such as "This week" and "Last week" (`colgroup.eq-band`, `eq-band-blue/-teal/-purple/-gray`).
+- Editable cells: click or Enter to edit, Enter or leaving to save, Escape to cancel; saving, saved, error and "changed" states; an `eq-edit` event (`td[data-type="edit"]`, `eqEditCells`).
+- Row tone: `eq-row-warning` and `eq-row-danger` mark a row that needs attention with a tint and a left edge, always next to a Status that says why.
+- Bullet cell: `eq-cell-bullet` shows actual against target inside a table cell.
+- `eq-status-wrap` (or a Status in `td.eq-wrap`) wraps long labels and keeps the dot on the first line.
+- "—" is only for cells with no value by definition, explained once in a column note; never for loading or missing data.
+
+**Data display**
+- Tier colours: `eq-label-gold/-silver/-bronze`, `eq-status-gold/-silver/-bronze` and `eq-label-rank`, with tokens `color-tier-gold/-silver/-bronze` (plus `-subtle` and `-foreground`). The tier name is always shown.
+- `eq-stat-unit`: a smaller, muted unit after a Stat value ("$1,240/mo", "312 leads").
+- `eq-delta-neutral` for prices and other two-sided changes. Colour a change green or red only when its direction clearly means good or bad for the reader.
+- Grouped 100% bar (`eq-bar-100-group`): rows of 100% bars with one legend, group headings, sub-rows and totals.
+- Pacing (`eq-pacing`, `eqPacing()`): progress against "expected by now" with On track, At risk and Behind (plus Ahead of pace and Over budget), adjustable thresholds and an inline version for table cells.
+- Record list (`eq-record-list`, `eqRecordList()`): a selectable list beside its detail; a keyboard listbox that fires `change`.
+- Copy ID (`eq-copy-id`): an ID with a small Copy button that confirms "Copied" on screen and to screen readers.
+
+**Controls and shell**
+- Combobox, Date picker, Calendar, Multi-select, Number input and Period menu fire standard `change` events (and `input` where useful) with the value on the element and in `event.detail`. Each doc page has an Events section.
+- Date picker and Calendar have a Clear action in a footer (`eq-calendar-footer`).
+- Combobox options can show secondary text, trailing (`eq-option-meta`) or on a second line (`eq-option-description`); search matches it.
+- Multi-select closes on Esc without applying and returns focus to its facet.
+- Collapsible Card: `eq-card-toggle` folds `eq-card-body` away; the header stays visible.
+- `eq-surface-light` keeps Light tokens (Luva Light in Luva mode) inside email and other outbound previews while the page is Dark.
+- Disabled Sidebar nav item (`aria-disabled="true"` on `eq-nav-item`).
+- `--space-masthead-height` (72px) and `--space-masthead-height-sm` (56px); the Masthead uses them.
+- Toast action slot (`eq-toast-actions`) for Undo, and `eqToastTimer()`, which pauses on hover and focus. The Toast docs say when to use Undo and when to use a confirm Modal.
+
+**For artifacts**
+- New `eq-ds-inline.css`: the whole stylesheet (tokens, Light and Dark, Luva mode, text styles, components) ready to paste into one `<style>` in a Claude artifact. Published next to eq-ds.css and in the DS artifact.
+- With `eq-app` on `<body>` (or `<html>`), the canvas behind the body is grey too, so short pages and overscroll don't show white.
+
 ## 1.2.1 (11 Nov 2026)
 
 Lighter than 1.2.0.
