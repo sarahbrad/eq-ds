@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.1 (11 Nov 2026)
+
+Lighter than 1.2.0.
+
+- The page canvas is a very light grey: `--color-surfaces-background` is zinc-50 in Light (1.2.0: zinc-100). Cards, tables and the filter bar stay white.
+- The sidebar stays zinc-100 (`--color-theme-sidebar`), now a step darker than the canvas. The active item is still raised in white.
+- Table toolbars and footers (`eq-table-toolbar`, `eq-table-footer`) are white again. Only table header rows and the applied-filters row use `--color-theme-structure` (zinc-100), so a table reads as a white card with one light header band.
+- Dark is unchanged.
+
 ## 1.2.0 (11 Nov 2026)
 
 Clearer hierarchy: a grey canvas with white content, and real fills for structure.
