@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.0 (11 Nov 2026)
+
+Clearer hierarchy: a grey canvas with white content, and real fills for structure.
+
+- The page canvas is grey in Light: `--color-surfaces-background` is now zinc-100 (was zinc-50), and `.eq-app` and `.eq-shell` paint it (they were white). Cards, tables, the Stat strip and the filter bar stay white, so content lifts off the page. Dark is unchanged (zinc-950 canvas, zinc-900 cards). The masthead stays on the shell colour.
+- The sidebar matches the canvas (`--color-theme-sidebar` zinc-100), with the active item still raised in white.
+- New token `--color-theme-structure` (zinc-100 Light, zinc-800 Dark) for structure inside white containers: table header rows, table toolbars and footers, and the applied-filters row. `--color-surfaces-muted` is unchanged, so hovers, read-only inputs and code blocks look the same.
+- The applied-filters row (`eq-active-filters`) now goes inside `eq-filter-bar`, where it becomes a grey band along the bottom of the white card. Outside a filter bar it looks as before. The FilterBar and DefaultFilters snippets are updated.
+- Grey page sections (`eq-section-grey`) now match the canvas; on a grey page, use a card instead.
+
 ## 1.1.1 (11 Nov 2026)
 
 Luva's full base palette.
