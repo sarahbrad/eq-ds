@@ -1,5 +1,9 @@
 # Changelog
 
+## Skill 1.1.10 (12 Nov 2026)
+
+- Filters and table controls sit in a component, never loose on the page: one table's filters, search and view controls go in its Table toolbar (`eq-table-toolbar` inside `eq-table-card`); page-wide filters go in the Filter bar (`eq-filter-bar`). `eq-toolbar` is a layout helper, not a bar. Popovers inside a table card use `details.eq-dropdown`. Found when a 1.1.9 reskin put its filters in a bare `eq-toolbar` on the grey canvas.
+
 ## npm package and artifact loader (12 Nov 2026, DS 1.3.0 · skill 1.1.9)
 
 Claude artifacts block stylesheets from other sites and GitHub links, so a reskin in an artifact could only paste the 266 KB `eq-ds-inline.css`. In practice Claude wrote its own imitation of the DS instead: no `eq-` classes and hand-typed tokens that had already drifted.
