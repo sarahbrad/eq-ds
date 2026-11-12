@@ -1,5 +1,14 @@
 # Changelog
 
+## npm package and artifact loader (12 Nov 2026, DS 1.3.0 · skill 1.1.8)
+
+Claude artifacts block stylesheets from other sites and GitHub links, so a reskin in an artifact could only paste the 266 KB `eq-ds-inline.css`. In practice Claude wrote its own imitation of the DS instead: no `eq-` classes and hand-typed tokens that had already drifted.
+
+- **`eq-ds.js` loader:** one line in `<head>` adds the whole of eq-ds.css to an artifact: `<script src="https://cdn.jsdelivr.net/npm/eq-internal-tools-ds@1/eq-ds.js"></script>`. It sets `<html data-eq-ds="1.3.0">`.
+- **npm package `eq-internal-tools-ds`:** eq-ds.js, eq-ds.css, eq-ds-inline.css, eq-ds-chart.js and the favicons, served by jsDelivr and unpkg. Published with `tools/npm_publish.sh` after each build.
+- **Chart theme in artifacts** now loads from npm; the old jsDelivr GitHub link was blocked.
+- **Skill 1.1.8:** load the DS with the loader in artifacts; never retype tokens or rebuild components in your own CSS; check before handover that the page uses `eq-` classes and loads the DS.
+
 ## 1.3.0 (11 Nov 2026)
 
 Components and fixes found by rebuilding four real tools (EQD-4788, EQD-4789, EQD-4791).
