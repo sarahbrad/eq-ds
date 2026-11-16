@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.4.0 (16 Nov 2026) · skill 1.1.11
+
+Skill 1.1.11 loads `eq-internal-tools-ds@1.4.0` and points at Tag cells, Editable grid, Sticky table header and the Floating bulk action bar (new integrity hash for eq-ds.js; eq-ds-chart.js is unchanged).
+
+Contrast and brand pass, plus four table components. Built on 12 Nov but not released until now.
+
+**Colour**
+- Table header rows are a light brand tint (`color-theme-table-header`: brand-100 in Light, brand-500 at 20% in Dark), laid over the card so a sticky header stays opaque. Header text is `color-theme-table-head` in the brand colour (brand-950 / brand-300), not grey. Group rows in a Grouped table use `color-theme-table-group` (brand-50 / brand-500 at 10%). `eq-band-blue` uses `color-theme-table-band-blue` (brand-200 / brand-900), a step stronger than the header. Table toolbars and footers stay white; `color-theme-structure` is now only the active-filters band.
+- New `color-brand-primary-emphasis` (brand-950 Light, brand-500 Dark) for selected and in-progress marks: checked Checkbox, Radio, Switch, Choice card and Toggle group, option checks in menus, Combobox, Multi-select and Period menu, Meter, Progress bar, Slider fill, file upload progress and Spinner. It keeps 3:1 on cards, popovers, hovered rows and grey tracks in Dark.
+- Form control borders are solid (`color-borders-input` zinc-500 in both themes; hover zinc-600 Light, zinc-400 Dark) instead of 10% hairlines, so a control meets 3:1 against cards, the canvas and table headers (WCAG 1.4.11).
+- Dark: `color-brand-primary` is brand-600 (hover brand-700), so white button text passes 4.5:1. `color-status-danger` is red-600 (hover red-700) in Dark too, for the same reason. Label text is a step lighter (blue-200, orange-300, red-300, violet-300, sky-300) for 4.5:1 on its tint.
+- Status: `color-status-warning-emphasis` is amber-600 in Light (3:1 on white and the canvas). Success and info buttons use dark text (`-foreground` zinc-950) with a lighter hover (green-500, sky-500).
+- Secondary danger button hover uses `color-status-danger-text`.
+- Luva mode gets the same: lavender table header, group and band tints, midnight-purple header text, and `brand-primary-emphasis` from midnight-purple-900 / lavender-500.
+
+**Accessibility (EQD-4808)**
+- New `tools/contrast_audit.sh`: renders every snippet in EverQuote and Luva, Light and Dark, and checks text (4.5:1, large 3:1) and form-control edges (3:1). 1.3.0 had 89–133 failures per mode; 1.4.0 has none. Run it on every release.
+
+**Templates (EQD-4804)**
+- List, Single page and Top bar page templates put a table's search and filters in its Table toolbar, inside the card. `snippets.py` fails the build when a bare `eq-toolbar` sits above a table card.
+
+**Tables**
+- Tag cells (`data-tag-cells`, `td[data-type="tags"]`): a list of values in a cell with add and remove, a select or free-text template, and an `eq-tags` event to save. Batch mode works with the Save bar.
+- Editable grid (`data-changes`, `eqChanges`): always-on inputs in a table, changed values and rows marked, a Save bar with the count, and a Review changes dialog (from → to, with Undo). `eq-changes-save` event.
+- Floating bulk action bar: pins to the bottom of the window while a long table is in view and a row is selected; rests under the table at its end.
+- Floating bulk action bar and the bar inside the card are opaque (tint over the card), so table text never shows through (EQD-4798).
+- Sticky table header (`eq-table-scroll`, `eqStickyTable`): header rows and column bands stick inside the card, with group rows sticking under them. `--eq-table-max-height` or `data-fill`.
+
 ## Skill 1.1.10 (12 Nov 2026)
 
 - Filters and table controls sit in a component, never loose on the page: one table's filters, search and view controls go in its Table toolbar (`eq-table-toolbar` inside `eq-table-card`); page-wide filters go in the Filter bar (`eq-filter-bar`). `eq-toolbar` is a layout helper, not a bar. Popovers inside a table card use `details.eq-dropdown`. Found when a 1.1.9 reskin put its filters in a bare `eq-toolbar` on the grey canvas.
