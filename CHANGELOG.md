@@ -1,6 +1,19 @@
 # Changelog
 
-## 1.4.0 (16 Nov 2026) · skill 1.1.11
+## Snippets and skill 1.1.14 (18 Nov 2026) · DS 1.4.0
+
+Pre-beta fixes from the EQD-4724 self-test (EQD-4820). The stylesheet and scripts haven't changed, so pages stay on DS 1.4.0 with the same integrity hashes.
+
+- **One-view templates have no sidebar (EQD-4823).** The Dashboard, Report, Lookup and Calculator templates now use the single-page masthead layout, matching the rule that a tool with one view has no sidebar or nav. The Generator template keeps the sidebar.
+- **One theme script (EQD-4824).** The Masthead and user menu snippets defined a different `eqTheme()` from Theme toggle, and whichever loaded first broke the other's controls. There is now one `eqTheme()` that updates every theme control. The single-page masthead gains a theme menu (an icon button with System, Light and Dark), since it has no user menu to hold one.
+- **Phone width (EQD-4825).** The skill's correctness checks now say to put side-by-side cards and charts in `eq-grid` and to check the page at 390px with no sideways scroll.
+- **Sample data (EQD-4826).** The skill now says how to fill the trust patterns on a prototype with made-up data: invented names, a "Sample data" label, the freshness strip wording, an illustrative query, a caveat line, numbers written into the HTML, and a list of what's needed to make it real.
+
+## 1.4.0 (16 Nov 2026) · skill 1.1.13
+
+Skill 1.1.13 (17 Nov): the skill ships every snippet (`references/snippets.md` and `references/snippets/<Name>.html`), so Claude can copy real markup with no network or artifact access. Found in the EQD-4724 self-test: a plain Claude Code session couldn't open the DS artifact and guessed class names. It also says the DS release in the links is separate from the skill's version.
+
+Skill 1.1.12: every DS link in the skill is pinned to npm 1.4.0 with an integrity hash (stylesheet, favicons and chart theme), not the moving GitHub Pages `/v1/` path. Tessl's security scan rated 1.1.11 Critical for the unpinned links. Pages built from the skill now stay on the release they were built with; each release bumps the version in the skill.
 
 Skill 1.1.11 loads `eq-internal-tools-ds@1.4.0` and points at Tag cells, Editable grid, Sticky table header and the Floating bulk action bar (new integrity hash for eq-ds.js; eq-ds-chart.js is unchanged).
 
