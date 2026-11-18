@@ -1,6 +1,6 @@
 # Changelog
 
-## Snippets and skill 1.1.14 (18 Nov 2026) · DS 1.4.0
+## Snippets and skill 1.1.15 (18 Nov 2026) · DS 1.4.0
 
 Pre-beta fixes from the EQD-4724 self-test (EQD-4820). The stylesheet and scripts haven't changed, so pages stay on DS 1.4.0 with the same integrity hashes.
 
@@ -8,6 +8,7 @@ Pre-beta fixes from the EQD-4724 self-test (EQD-4820). The stylesheet and script
 - **One theme script (EQD-4824).** The Masthead and user menu snippets defined a different `eqTheme()` from Theme toggle, and whichever loaded first broke the other's controls. There is now one `eqTheme()` that updates every theme control. The single-page masthead gains a theme menu (an icon button with System, Light and Dark), since it has no user menu to hold one.
 - **Phone width (EQD-4825).** The skill's correctness checks now say to put side-by-side cards and charts in `eq-grid` and to check the page at 390px with no sideways scroll.
 - **Sample data (EQD-4826).** The skill now says how to fill the trust patterns on a prototype with made-up data: invented names, a "Sample data" label, the freshness strip wording, an illustrative query, a caveat line, numbers written into the HTML, and a list of what's needed to make it real.
+- **Skill 1.1.15** (same day, from a re-run of the self-test): the sample-data freshness status is a neutral "Sample data" with no age warning; Method & caveats points at the ReportPagePattern section; SinglePagePattern says the one-view templates share its layout.
 
 ## 1.4.0 (16 Nov 2026) · skill 1.1.13
 
