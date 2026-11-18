@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.1 (18 Nov 2026) · skill 1.1.16
+
+**Luva Light nav and page (EQD-4827).** In Luva mode, Light only:
+- the sidebar (`theme/sidebar`) and masthead (`theme/shell`) are Stitch off-white-50 #F9F5EA
+- the page background (`surfaces/background`) is off-white-25 #FFFDF8
+- `surfaces/subtle` (secondary icons, plain-button text) is Stitch mauve-600 #776A82, because zinc-500 fell to 4.4:1 on the cream masthead.
+
+Luva Dark and EverQuote are unchanged. The contrast audit passes in all four modes. Skill 1.1.16 and the artifact load 1.4.1 (new integrity hashes for eq-ds.css and eq-ds.js; eq-ds-chart.js is unchanged).
+
 ## Snippets and skill 1.1.15 (18 Nov 2026) · DS 1.4.0
 
 Pre-beta fixes from the EQD-4724 self-test (EQD-4820). The stylesheet and scripts haven't changed, so pages stay on DS 1.4.0 with the same integrity hashes.
